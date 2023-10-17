@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #rst-box {
+            width: 400px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 1px 2px 3px black;;
+            background-image: url('./images/ham2.png');
+            background-size: cover;
+            border: 1px solid #333;
+            border-radius: 20px;
+            box-shadow: 1px 2px 3px black;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>세트 메뉴 가격</h2>
+    <label for="menu1">상덕버거 가격 입력</label>
+    <input type="number" id="menu1">
+    <br>
+    <label for="menu2">중덕버거 가격 입력</label>
+    <input type="number" id="menu2">
+    <br>
+    <label for="menu3">하덕버거 가격 입력</label>
+    <input type="number" id="menu3">
+    <br>
+    <label for="menu4">콜라 가격 입력</label>
+    <input type="number" id="menu4">
+    <br>
+    <label for="menu5">사이다 가격 입력</label>
+    <input type="number" id="menu5">
+    <br>
+    <button onclick="getPrice()">세트메뉴계산하기</button>
+    <div id="rst-box"></div>
+    <!-- <div class="container">
+        <h2>상근날드에서 제일 저렴한 세트 메뉴</h2>
+        <script src="./src/problem6_burgerset.js"></script>
+    </div> -->
+</body>
+</html>
