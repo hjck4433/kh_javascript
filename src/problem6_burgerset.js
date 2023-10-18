@@ -54,5 +54,5 @@ function getPrice(){
         if(i < 3 && minB > menu[i]) minB = menu[i];
         if(i > 2 && minD > menu[i]) minD = menu[i];
     }
-    document.getElementById('rst-box').innertext = (minB + minD -50) + "원";
+    document.getElementById('rst-box').innerText = (minB + minD -50) + "원";
 }
