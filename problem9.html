@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            margin : 0 auto;
+            border: 1px solid #ccc; 
+            border-radius: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(250, 170, 155);
+        }
+        #remain {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>학원 수료</h1>
+            <p><span id="remain"></span>일 남았습니다! 힘내세요!!!!</p>
+            <p>화이팅!</p>
+        </div>
+    </div>
+    <script src="./src/problem9_remaintime.js"></script>
+</body>
+</html>
