@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn-box {
+            width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        button {
+            flex-grow: 1;
+            margin: 0 2px;
+            padding: 10px 0;
+            border: none;
+            color: #fff;
+        }
+        button.green {
+            background-color: green;
+        }
+        button.orange {
+            background-color: orange;
+        }
+        button.purple {
+            background-color: purple;
+        }
+
+        #rst-box {
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="btn-box">
+        <button class="green">Green</button>
+        <button class="orange">Orange</button>
+        <button class="purple">Purple</button>
+    </div>
+    <div id="rst-box"></div>
+    <script>
+        const btnList = document.querySelectorAll('button');
+        const colBox = document.querySelector('#rst-box');
+        for (let i = 0; i < btnList.length; i++) {
+            let btnCol = btnList[i].innerText;
+            btnList[i].addEventListener("click",function(){
+                alert(`${btnCol} 버튼을 클릭했습니다!`);
+                colBox.style.backgroundColor = btnCol;
+            })
+        }
+
+
+    </script>
+</body>
+</html>

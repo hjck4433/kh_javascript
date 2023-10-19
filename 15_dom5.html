@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="frm">
+        <input type="text" name="id">
+        <input type="password" name="pw">
+    </form>
+
+    <form action="#">
+        <label for="apple">
+            <input type="checkbox" value="apple" id="apple">사과
+        </label>
+        <label for="banana">
+            <input type="checkbox" value="banana" id="banana">바나나
+        </label>
+        <label for="orange">
+            <input type="checkbox" value="orange" id="orange">오렌지
+        </label>
+        <label for="melon">
+            <input type="checkbox" value="melon" id="melon">멜론
+        </label>
+    </form>
+    <form action="#">
+        <label for="apple1">
+            <input type="radio" name="fruits" value="apple1" id="apple">사과
+        </label>
+        <label for="banana1">
+            <input type="radio" name="fruits" value="banana1" id="banana">바나나
+        </label>
+        <label for="orange1">
+            <input type="radio" name="fruits" value="orange1" id="orange">오렌지
+        </label>
+        <label for="melon1">
+            <input type="radio" name="fruits" value="melon1" id="melon">멜론
+        </label>
+    </form>
+
+    <script>
+        // const aEl = document.createElement("a"); // 생성
+        // document.body.appendChild(aEl); // 연결
+        // aEl.innerText = "네이버 추가";
+        // aEl.setAttribute("href","http://naver.com");
+        // aEl.setAttribute("target","_blank");
+
+        document.frm.id.value = "곰돌이사육사";
+        document.frm.pw.value = "sphb8250";
+
+        const ckEls = document.querySelectorAll("[type='checkbox']");
+        for(let i = 0; i < ckEls.length; i++) {
+            ckEls[i].checked = true;
+        }
+        console.log(ckEls);
+
+        const ckEls2 = document.querySelectorAll("[type='radio']");
+        for(let i = 0; i < ckEls.length; i++) {
+            if(ckEls2[i].value==="orange1") ckEls2[i].checked = true;
+        }
+        console.log(ckEls);
+
+
+
+    </script>
+</body>
+</html>

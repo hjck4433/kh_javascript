@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 380px;
+            margin: 0 auto;
+        }
+        img {
+            width: 100%;
+        }
+        .desc {
+            position: relative;
+            top: -54px;
+            /* transition: .4s; */
+        }
+        .desc.active {
+            top: 0;
+        }
+        .desc-box {
+            display: none;
+        }
+        .desc.active > .desc-box {
+            display: block;
+        }
+        h3 {
+            font-size: 1em;
+        }
+        p {
+            letter-spacing: -.5px;
+            line-height: 1.6;
+        }
+        button {
+            background-color: rgba(255,255,255,.8);
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .desc.active button {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="./images/itzy.jpeg" alt="잇지">
+        <div class="desc">
+            <div class="desc-box">
+                <h3>그룹 잇지</h3>
+                <p>
+                    팀명 'ITZY'는 '너희가 원하는거 전부 있지? 있지!'라는 뜻을 가지고 있으며,
+                    정식 한글 표기법은 있지이다. 혹 영어명인 'ITZY'로만 들어본 사람들이
+                    한글로는 어떻게 적는지 몰라 '잇지'라고 부르는 경우도 꽤 많이 있는데,
+                    '있지'라고 불러야 한다며 정정해주는 것이 팬덤 잇지에게는 일상이 되었다
+                </p>
+            </div>
+            <button>상세 설명 <span>보기</span></button>
+        </div>
+    </div>
+
+    <script>
+        let status = false;
+
+        const descEl = document.querySelector('.desc');
+        const btnEl = document.querySelector('button');
+
+        btnEl.addEventListener('click',function(){
+            if(!status) {
+                descEl.classList.add('active');
+                document.querySelector('span').innerHTML = "닫기";
+            }else {
+                descEl.classList.remove('active');
+                document.querySelector('span').innerHTML = "보기";
+            }
+            status = !status;
+        });
+    </script>
+</body>
+</html>
