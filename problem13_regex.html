@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .box {
+            margin-bottom: 20px;
+        }
+        .input-box {
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+        label {
+            display: flex;
+            flex-direction: row;
+        }
+        input {
+            height: 40px;
+            padding: 5px 10px;
+            border: 1px solid royalblue;
+            border-radius: 5px;
+            font-size: .9em;
+            text-align: center;
+            color: #000;
+        }
+        input::placeholder {
+            font-weight: bold;
+        }
+
+        button {
+            height: 40px;
+            padding: 5px 20px;
+            margin-left: 10px;
+            border: 1px solid #222;
+            border-radius: 5px;
+            background-color: royalblue;
+            color: #fff;
+            font-size: 1em;
+        }
+        .error {
+            font-size: .8em;
+            text-align: right;
+            padding-right: 5px;
+            margin: 5px 0;
+            color: red;
+        }
+        button {
+            cursor: pointer;
+        }
+        button#send {
+            cursor:default;
+            background-color: #ccc;
+        }
+        button#send.active {
+            cursor:pointer;
+            background-color: royalblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div class="box">
+            <label for="userid">
+                <div class="input-box">
+                    <input type="text" id="userid" placeholder="아이디 입력"> 
+                    <p class="error"></p>
+                </div>
+                <button>확인</button>
+            </label>
+            <label for="pw">
+                <div class="input-box">
+                    <input type="password" id="pw" placeholder="패스워드 입력"> 
+                    <p class="error"></p>
+                </div>
+                <button>확인</button>
+            </label>
+            <label for="email">
+                <div class="input-box">
+                    <input type="text" id="email" placeholder="이메일 입력"> 
+                    <p class="error"></p>
+                </div>
+                <button>확인</button>
+            </label>
+            <label for="phone">
+                <div class="input-box">
+                    <input type="text" id="phone" placeholder="전화번호 입력"> 
+                    <p class="error"></p>
+                </div>
+                <button>확인</button>
+            </label>
+        </div>
+
+        <button id="send">가입 요청</button>
+    </form>
+    <script>
+        const regex = [
+            /[a-zA-Z0-9]{8,20}$/, // id확인
+            /[a-zA-Z0-9\[\]\{\}\/\(\)\.\?\<\>!@#$%^&*]{8,20}$/, // pw확인
+            /^([a-z]+\d*)+(\.?\w+)+@\w+(\.\w{2,3})+$/, //이메일 확인
+            /\d{2,3}-\d{3,4}-\d{4}$/ //번호 확인
+        ];
+        const errorMsg = [
+            "대소문자, 숫자 포함 8 ~ 20 자 입력",
+            "대소문자,특수문자,숫자 포함 8 ~ 20 자 입력",
+            "잘못된 이메일 형식입니다",
+            "잘못된 전화번호 형식입니다"
+        ]
+        const isError =[false, false, false, false];
+        
+        const btnEl = document.querySelectorAll('button');
+        const inputEl = document.querySelectorAll('input');
+        const errorEl = document.querySelectorAll('.error');
+
+        for(let i = 0; i<btnEl.length-1; i++){
+            btnEl[i].addEventListener("click",function(e){
+                e.preventDefault;
+                let inputVal = inputEl[i].value;
+                let rst = regex[i].test(inputVal);
+                console.log(rst);
+                if(!rst) errorEl[i].innerHTML = errorMsg[i];
+                else {
+                    isError[i] = true;
+                    errorEl[i].innerHTML = "사용가능합니다";
+                    errorEl[i].style.color = "royalblue";
+                }
+
+                if(isError.includes(false) === false) document.querySelector('#send').classList.add('active');
+            })
+        }
+        
+    </script>
+</body>
+</html>
