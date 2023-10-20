@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                 width: 5000px;
+                 height: 5000px;
+             }
+             .btn1 {
+                 position: fixed;
+                 top: 30px;
+                 left: 10px;
+             }
+             .btn2 {
+                 position: fixed;
+                 top: 30px;
+                 left: 200px;
+             }
+       </style>
+</head>
+<body>
+    <button onclick="popup()">팝업</button>
+
+    <button class="btn1" onclick="sTo()">scrollTo(100, 200)</button>
+    <button class="btn2" onclick="sBy()">scrollBy(100, 200)</button>
+
+    <script>
+        function popup() {
+            // windows 객체의 open() 메소드는 웹 브라우저에서 새로운 창을 여는 데 사용
+            window.open('problem12_teacherver.html','popup','width=200 height=200');
+        }
+
+
+        function sTo(){
+			window.scrollTo(100, 200);
+            // window.scrollTo({left:100, top:200});
+        }
+        function sBy(){
+            window.scrollBy(100, 200);
+            // window.scrollBy({left:100, top:200});
+        }
+    </script>
+</body>
+</html>

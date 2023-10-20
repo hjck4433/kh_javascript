@@ -14,8 +14,9 @@
             flex-grow: 1;
             margin: 0 2px;
             padding: 10px 0;
-            border: none;
+            border: 1px solid #ccc;
             color: #fff;
+            border-radius: 6px;
         }
         button.green {
             background-color: green;
@@ -49,13 +50,17 @@
         const colBox = document.querySelector('#rst-box');
         for (let i = 0; i < btnList.length; i++) {
             let btnCol = btnList[i].innerText;
-            btnList[i].addEventListener("click",function(){
-                alert(`${btnCol} 버튼을 클릭했습니다!`);
+            btnList[i].addEventListener("click",(event)=>{
+                console.log(event.currentTarget);
+                alert(`${event.currentTarget.innerText} 버튼을 클릭했습니다!`);
                 colBox.style.backgroundColor = btnCol;
             })
         }
-
-
+        // btnList.forEach(btn=>btn.addEventListener("click",function(){
+        //     let btnCol = this.innerHTML;
+        //     alert(`${btnCol} 버튼을 클릭했습니다!`);
+        //     colBox.style.backgroundColor = btnCol;
+        // }))
     </script>
 </body>
 </html>

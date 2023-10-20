@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button>클릭</button> -->
+    <!-- <input type="text"> -->
+    <a href="https://www.naver.com">네이버 이동</a>
+    <a href="https://www.daum.net">다음 이동</a>
+    <script>
+        // const btnEl = document.querySelector('button');
+        // btnEl.addEventListener("click", function(e) {
+        //     console.log(e);
+        //     console.log(`clientX:${e.clientX}`);
+        //     console.log(`clientY :${e.clientY }`);
+        //     console.log(`pageX:${e.pageX}`);
+        //     console.log(`pageY:${e.pageY}`);
+        //     console.log(`screenX:${e.screenX}`);
+        //     console.log(`screenY :${e.screenY }`);
+        // });
+
+        // const inputEl = document.querySelector('input');
+        // inputEl.addEventListener("keydown", (e) => {
+        //     console.log(`키보드 눌림 확인 : ${e.keyCode}`);
+        // });
+
+        const aEls=document.querySelectorAll("a");
+        for(let i = 0; i <aEls.length; i++){
+            aEls[i].addEventListener("click", (e)=>{
+                // 기본 이벤트 취소
+                e.preventDefault();
+                alert(`${e.currentTarget.innerText}`);
+        });
+        }
+    </script>
+</body>
+</html>
