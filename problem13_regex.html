@@ -118,7 +118,7 @@
             "대소문자,특수문자,숫자 포함 8 ~ 20 자 입력",
             "잘못된 이메일 형식입니다",
             "잘못된 전화번호 형식입니다"
-        ]
+        ];
         const isError =[false, false, false, false];
         
         const btnEl = document.querySelectorAll('button');
@@ -136,11 +136,11 @@
                     isError[i] = true;
                     errorEl[i].innerHTML = "사용가능합니다";
                     errorEl[i].style.color = "royalblue";
-                }
+                };
 
                 if(isError.includes(false) === false) document.querySelector('#send').classList.add('active');
             })
-        }
+        };
         
     </script>
 </body>
